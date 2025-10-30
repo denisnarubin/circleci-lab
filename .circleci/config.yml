@@ -8,14 +8,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-deps
+            - laba4
       - run:
           name: Install dependencies
-          command: pip install -r requirements.txt
+          command: pip install -r ./laba4/requirements.txt
       - save_cache:
           paths:
             - ~/.cache/pip
-          key: v1-deps
+          key: laba4
       - run:
           name: Run tests
           command: pytest
@@ -27,14 +27,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-deps
+            - laba4
       - run:
           name: Install dependencies
-          command: pip install -r requirements.txt
+          command: pip install -r ./laba4/requirements.txt
       - save_cache:
           paths:
             - ~/.cache/pip
-          key: v1-deps
+          key: laba4
       - run:
           name: Check code formatting with black
           command: black --check .
